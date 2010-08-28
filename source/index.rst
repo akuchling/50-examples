@@ -15,6 +15,7 @@ Contents:
    :maxdepth: 2
 
    intro.rst
+   gravity.rst
 
 Indices and tables
 ==================
