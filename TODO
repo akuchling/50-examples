@@ -1,0 +1,32 @@
+
+Structure
+---------
+
+Each example is 5-10 pages.
+Aiming for 50 examples, or 30-60.
+
+To be written
+-------------
+
+* Given N numbers, find the M smallest or largest.
+* Minimax game trees: tic-tac-toe.
+* Graphs: analyzing social networks
+* Tree search
+* Photo manipulation
+*** Stretching/shrinking an image
+*** Smart shrinking
+*** Modify contrast/brightness.
+* Plotting with turtle graphics
+* Gravitational simulation
+* Markov chaining
+* RSA encryption
+* Rendering fractals
+
+Vague ideas
+-----------
+
+* Something with distributed computation?
+* Divide-and-conquer?
+* Playing poker?
+
+
