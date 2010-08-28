@@ -5,22 +5,29 @@ Structure
 Each example is 5-10 pages.
 Aiming for 50 examples, or 30-60.
 
+Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
+
 To be written
 -------------
 
 * Given N numbers, find the M smallest or largest.
 * Minimax game trees: tic-tac-toe.
 * Graphs: analyzing social networks
-* Tree search
+* Tree search: assemble a binary tree and then search it.
 * Photo manipulation
 *** Stretching/shrinking an image
 *** Smart shrinking
 *** Modify contrast/brightness.
-* Plotting with turtle graphics
-* Gravitational simulation
+* Audio manipulation
+*** Evening out the volume level.
+*** Apply an FFT or filtering.
 * Markov chaining
 * RSA encryption
+* Plotting with turtle graphics
+* Gravitational simulation
 * Rendering fractals
+* Random numbers: calculating pi by random numbers
+* Game of Life
 
 Vague ideas
 -----------
@@ -28,5 +35,9 @@ Vague ideas
 * Something with distributed computation?
 * Divide-and-conquer?
 * Playing poker?
+* Modules to show: difflib; sqlite3
+* Data structures: heaps, XXX
+* Geometric data structures: XXX
+
 
 
