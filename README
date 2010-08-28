@@ -1,10 +1,17 @@
 
 Contains the text of a book describing interesting examples of Python
-programming for use in teaching.
+programming for use in teaching.  An alternate title was "The Python
+Teaching Cookbook".
 
 I haven't tried finding a publisher for this book yet.
 
-Requires Sphinx for formatting.
+Requires Sphinx for formatting; once you have Sphinx installed, type
+"make" to see the available targets in the Makefile.
 
-Please send comments to amk@amk.ca
+Please send comments to <amk@amk.ca>.
+
+
+A.M. Kuchling
+amk@amk.ca
+
 
