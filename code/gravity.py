@@ -8,22 +8,31 @@ G = 6.67e-11
 
 # Assumed scale: 100 pixels = 1AU.
 AU = (149.6e6 * 1000)     # 149.6 million km, in meters.
-SCALE = AU / 100.0
+SCALE = 100 / AU
 
 class Body(Turtle):
+    """Subclass of Turtle representing a gravitationally-acting body.
+
+    Extra attributes:
+    mass : mass in kg
+    vx, vy: x, y velocities in m/s
+    px, py: x, y positions in m
+    """
+    
     mass = None
     vx = vy = 0.0
-
+    px = py = 0.0
+    
     def attraction(self, other):
         """(Body): (fx, fy)
 
         Returns the force exerted upon this body by the other body.
         """
         # Compute the distance of the other body.
-        sx, sy = self.position()
-        ox, oy = other.position()
-        dx = (ox-sx) * SCALE
-        dy = (oy-sy) * SCALE
+        sx, sy = self.px, self.py
+        ox, oy = other.px, other.py
+        dx = (ox-sx)
+        dy = (oy-sy)
         r = math.sqrt(dx**2 + dy**2)
 
         # Compute the force of attraction
@@ -37,22 +46,24 @@ class Body(Turtle):
 
 def main():
     sun = Body()
-    sun.mass = 1e49
-    sun.penup()
+    sun.mass = 1.98892 * 10**30
 
     earth = Body()
-    earth.mass = 1e36
-    earth.penup()
-    earth.goto(-100, 100)
-    earth.vy = 35
+    earth.mass = 5.9742 * 10**24
+    earth.px = -1*AU
+    earth.vy = 29.783 * 1000            # 29.783 km/sec
 
     loop([sun, earth])
 
 def loop(bodies):
     """()
     """
+    timestep = 24*3600  # One day
+    
+    for body in bodies:
+        body.penup()
+
     while True:
-        print 'loop'
         force = {}
         for body in bodies:
             totalx = totaly = 0.0
@@ -68,16 +79,17 @@ def loop(bodies):
         # Update velocities
         for body in bodies:
             fx, fy = force[body]
+            print body.vx, body.vy
             body.vx += fx / body.mass
             body.vy += fy / body.mass
+            print body.vx, body.vy
+            print
 
             # Update positions
-            bx, by = body.position()
-            bx = (bx*SCALE + body.vx) / SCALE
-            by = (by*SCALE + body.vy) / SCALE
-            body.goto(bx, by)
+            body.px += body.vx * timestep
+            body.py += body.vy * timestep
+            body.goto(body.px*SCALE, body.py*SCALE)
             body.dot()
-
 
 
 if __name__ == '__main__':
