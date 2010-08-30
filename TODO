@@ -28,16 +28,17 @@ To be written
 * Rendering fractals
 * Random numbers: calculating pi by random numbers
 * Game of Life
+* Music composition
 
 Vague ideas
 -----------
 
+* Simple neural network?
 * Something with distributed computation?
 * Divide-and-conquer?
 * Playing poker?
 * Modules to show: difflib; sqlite3
 * Data structures: heaps, XXX
 * Geometric data structures: XXX
-
 
 
