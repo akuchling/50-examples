@@ -80,8 +80,8 @@ def loop(bodies):
         for body in bodies:
             fx, fy = force[body]
             print body.vx, body.vy
-            body.vx += fx / body.mass
-            body.vy += fy / body.mass
+            body.vx += fx / body.mass * timestep
+            body.vy += fy / body.mass * timestep
             print body.vx, body.vy
             print
 
