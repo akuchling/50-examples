@@ -10,8 +10,13 @@ Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
 To be written
 -------------
 
+* Graphics
+*** Plotting with turtle graphics
+*** Rendering fractals
+*** Gravitational simulation
+*** Game of Life
 * Given N numbers, find the M smallest or largest.
-* Minimax game trees: tic-tac-toe.
+* Minimax game trees: tic-tac-toe or Hnefatafl?
 * Graphs: analyzing social networks
 * Tree search: assemble a binary tree and then search it.
 * Photo manipulation
@@ -21,14 +26,11 @@ To be written
 * Audio manipulation
 *** Evening out the volume level.
 *** Apply an FFT or filtering.
+*** Music composition
 * Markov chaining
 * RSA encryption
-* Plotting with turtle graphics
-* Gravitational simulation
-* Rendering fractals
 * Random numbers: calculating pi by random numbers
-* Game of Life
-* Music composition
+* Queuing: simulate a grocery store and a bank queue.
 
 Vague ideas
 -----------
