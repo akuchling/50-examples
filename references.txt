@@ -1,0 +1,19 @@
+
+PyGame
+------------------------------
+
+Top 10 PyGame tutorials:
+http://inventwithpython.com/blog/2010/09/01/the-top-10-pygame-tutorials/
+
+Tree game playing
+------------------------------
+
+Garry Kasparov, "The Chess Master and the Computer"
+http://www.nybooks.com/articles/archives/2010/feb/11/the-chess-master-and-the-computer/
+
+Feng-hsiung Hsu, "Behind Deep Blue"
+
+
+
+
+
