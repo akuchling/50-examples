@@ -4,6 +4,7 @@ Structure
 
 Each example is 5-10 pages.
 Aiming for 50 examples, or 30-60.
+Uses Python3 and the turtle module for graphics throughout.
 
 Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
 
@@ -31,6 +32,8 @@ To be written
 * RSA encryption
 * Random numbers: calculating pi by random numbers
 * Queuing: simulate a grocery store and a bank queue.
+* Spline curves
+* Simplex programming
 
 Vague ideas
 -----------

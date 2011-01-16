@@ -1,7 +1,8 @@
 
 Contains the text of a book describing interesting examples of Python
 programming for use in teaching.  An alternate title was "The Python
-Teaching Cookbook".
+Teaching Cookbook".  The examples are written for Python 3 (3.2 was
+used).
 
 I haven't tried finding a publisher for this book yet.
 
