@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import math
 from turtle import *
@@ -79,11 +79,11 @@ def loop(bodies):
         # Update velocities
         for body in bodies:
             fx, fy = force[body]
-            print body.vx, body.vy
+            print(body.vx, body.vy)
             body.vx += fx / body.mass * timestep
             body.vy += fy / body.mass * timestep
-            print body.vx, body.vy
-            print
+            print(body.vx, body.vy)
+            print()
 
             # Update positions
             body.px += body.vx * timestep
