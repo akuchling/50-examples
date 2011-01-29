@@ -15,6 +15,7 @@ Contents:
    :maxdepth: 1
 
    intro.rst
+   turtle.rst
    gravity.rst
 
 Indices and tables
