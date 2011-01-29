@@ -7,12 +7,12 @@ between two objects is given by:
 
 .. math::
 
-  F = G\frac{m_1m_2}/d^2
+  F = G\frac{m_1m_2}{d^2}
 
 where :math:`G` is the gravitational constant, :math:`m_1` and
 :math:`m_2` are the masses of the two objects, and :math:`d` is the
 distance between them.  In SI units, :math:`G` has the value
-:math:`6.67428 x 10^{-11} N(m/kg)^2`,
+:math:`6.67428 \times 10^{-11} N(m/kg)^2`,
 so :math:`d` is measured in meters, the masses are measured in kilograms,
 and the resulting :math:`F` is in newtons.
 
