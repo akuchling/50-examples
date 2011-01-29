@@ -8,7 +8,7 @@ G = 6.67428e-11
 
 # Assumed scale: 100 pixels = 1AU.
 AU = (149.6e6 * 1000)     # 149.6 million km, in meters.
-SCALE = 100 / AU
+SCALE = 250 / AU
 
 class Body(Turtle):
     """Subclass of Turtle representing a gravitationally-acting body.
@@ -87,17 +87,20 @@ def loop(bodies):
 
         force = {}
         for body in bodies:
-            totalx = totaly = 0.0
+            # Add up all of the forces exerted on 'body'.
+            total_fx = total_fy = 0.0
             for other in bodies:
+                # Don't calculate the body's attraction to itself
                 if body is other:
                     continue
                 fx, fy = body.attraction(other)
-                totalx += fx
-                totaly += fy
+                total_fx += fx
+                total_fy += fy
 
-            force[body] = (totalx, totaly)
+            # Record the total force exerted.
+            force[body] = (total_fx, total_fy)
 
-        # Update velocities
+        # Update velocities based upon on the force.
         for body in bodies:
             fx, fy = force[body]
             body.vx += fx / body.mass * timestep
@@ -123,14 +126,25 @@ def main():
     earth.vy = 29.783 * 1000            # 29.783 km/sec
     earth.pencolor('blue')
 
-    #random = Body()
-    #random.name = 'Random'
-    #random.mass = 10**20
-    #random.px = -.5*AU
-    #random.vy = -35 * 1000
-    #random.vx = 1000
+    # Venus parameters taken from
+    # http://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    venus = Body()
+    venus.name = 'Venus'
+    venus.mass = 4.8685 * 10**24
+    venus.px = 0.723 * AU
+    venus.vy = -35.02 * 1000
+    venus.pencolor('red')
 
-    loop([sun, earth])
+    # Moon parameters taken from
+    # http://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
+    ##moon = Body()
+    ##moon.name = 'Moon'
+    ##moon.mass = earth.mass * .0123
+    ##moon.px = -1*AU + 378000*1000
+    ##moon.vy = earth.vy + 1023
+    ##moon.pencolor('gray')
+
+    loop([sun, earth, venus])
 
 if __name__ == '__main__':
     main()
