@@ -56,8 +56,35 @@ class Body(Turtle):
         fy = math.sin(theta) * f
         return fx, fy
 
+def update_info(step):
+    """(Turtle, int)
+    
+    Displays information about the status of the simulation.
+    """
+    tt = Turtle()
+    tt.hideturtle()
+    tt.color('black', 'white')
+
+    # Clear the information area by drawing a square.
+    tt.penup()
+    tt.goto(-200,200)
+    tt.pendown()
+    tt.setheading(0)
+    tt.begin_fill()
+    for i in range(4):
+        tt.forward(50) ; tt.right(90)
+    tt.end_fill()
+
+    # Display information
+    tt.penup()
+    tt.goto(-190, 180)
+    tt.write('Step {0}'.format(step),
+                      font=("Arial", 16, "normal"))
+
 def loop(bodies):
-    """()
+    """([Body])
+
+    Returns 
     """
     timestep = 24*3600  # One day
     
@@ -65,7 +92,11 @@ def loop(bodies):
         body.penup()
         body.hideturtle()
 
+    step = 1
     while True:
+        update_info(step)
+        step += 1
+
         force = {}
         for body in bodies:
             totalx = totaly = 0.0
@@ -92,7 +123,7 @@ def loop(bodies):
             body.px += body.vx * timestep
             body.py += body.vy * timestep
             body.goto(body.px*SCALE, body.py*SCALE)
-            body.dot()
+            body.dot(3)
 
 
 def main():
