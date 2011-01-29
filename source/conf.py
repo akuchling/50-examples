@@ -23,7 +23,7 @@ import sys, os
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.doctest', 'sphinx.ext.intersphinx', 
-              #'sphinx.ext.jsmath'
+              'sphinx.ext.jsmath'
              ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -198,3 +198,6 @@ latex_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+jsmath_path = 'jsMath/jsMath.js'
+
