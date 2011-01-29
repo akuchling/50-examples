@@ -23,7 +23,7 @@ import sys, os
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.doctest', 'sphinx.ext.intersphinx', 
-              #'sphinx.ext.jsmath'
+              'sphinx.ext.jsmath'
              ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -67,6 +67,7 @@ release = '1.0'
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
 exclude_trees = []
+exclude_patterns = ['template.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -198,3 +199,6 @@ latex_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+jsmath_path = 'jsMath/easy/load.js'
+
