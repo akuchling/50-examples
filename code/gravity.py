@@ -4,7 +4,7 @@ import math
 from turtle import *
 
 # The gravitational constant G
-G = 6.67e-11
+G = 6.67428e-11
 
 # Assumed scale: 100 pixels = 1AU.
 AU = (149.6e6 * 1000)     # 149.6 million km, in meters.
@@ -44,17 +44,6 @@ class Body(Turtle):
         fy = math.sin(theta) * f
         return fx, fy
 
-def main():
-    sun = Body()
-    sun.mass = 1.98892 * 10**30
-
-    earth = Body()
-    earth.mass = 5.9742 * 10**24
-    earth.px = -1*AU
-    earth.vy = 29.783 * 1000            # 29.783 km/sec
-
-    loop([sun, earth])
-
 def loop(bodies):
     """()
     """
@@ -62,6 +51,7 @@ def loop(bodies):
     
     for body in bodies:
         body.penup()
+        body.hideturtle()
 
     while True:
         force = {}
@@ -79,11 +69,11 @@ def loop(bodies):
         # Update velocities
         for body in bodies:
             fx, fy = force[body]
-            print(body.vx, body.vy)
+            ##print(body.vx, body.vy)
             body.vx += fx / body.mass * timestep
             body.vy += fy / body.mass * timestep
-            print(body.vx, body.vy)
-            print()
+            ##print(body.vx, body.vy)
+            ##print()
 
             # Update positions
             body.px += body.vx * timestep
@@ -91,6 +81,25 @@ def loop(bodies):
             body.goto(body.px*SCALE, body.py*SCALE)
             body.dot()
 
+
+def main():
+    sun = Body()
+    sun.mass = 1.98892 * 10**30
+    sun.pencolor('yellow')
+
+    earth = Body()
+    earth.mass = 5.9742 * 10**24
+    earth.px = -1*AU
+    earth.vy = 29.783 * 1000            # 29.783 km/sec
+    earth.pencolor('blue')
+
+    #random = Body()
+    #random.mass = 10**20
+    #random.px = -.5*AU
+    #random.vy = -35 * 1000
+    #random.vx = 1000
+
+    loop([sun, earth])
 
 if __name__ == '__main__':
     main()
