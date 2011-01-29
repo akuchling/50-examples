@@ -135,15 +135,6 @@ def main():
     venus.vy = -35.02 * 1000
     venus.pencolor('red')
 
-    # Moon parameters taken from
-    # http://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
-    ##moon = Body()
-    ##moon.name = 'Moon'
-    ##moon.mass = earth.mass * .0123
-    ##moon.px = -1*AU + 378000*1000
-    ##moon.vy = earth.vy + 1023
-    ##moon.pencolor('gray')
-
     loop([sun, earth, venus])
 
 if __name__ == '__main__':
