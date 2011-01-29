@@ -56,35 +56,23 @@ class Body(Turtle):
         fy = math.sin(theta) * f
         return fx, fy
 
-def update_info(step):
-    """(Turtle, int)
+def update_info(step, bodies):
+    """(int, [Body])
     
     Displays information about the status of the simulation.
     """
-    tt = Turtle()
-    tt.hideturtle()
-    tt.color('black', 'white')
-
-    # Clear the information area by drawing a square.
-    tt.penup()
-    tt.goto(-200,200)
-    tt.pendown()
-    tt.setheading(0)
-    tt.begin_fill()
-    for i in range(4):
-        tt.forward(50) ; tt.right(90)
-    tt.end_fill()
-
-    # Display information
-    tt.penup()
-    tt.goto(-190, 180)
-    tt.write('Step {0}'.format(step),
-                      font=("Arial", 16, "normal"))
+    print('Step #{0}'.format(step))
+    for body in bodies:
+        s = '{0:<8}  Pos.={1:>6.2f} {2:>6.2f} Vel.={3:>10.3f} {4:>10.3f}'.format(
+            body.name, body.px/AU, body.py/AU, body.vx, body.vy)
+        print(s)
+    print()
 
 def loop(bodies):
     """([Body])
 
-    Returns 
+    Never returns; loops through the simulation, updating the
+    positions of all the provided bodies.
     """
     timestep = 24*3600  # One day
     
@@ -94,7 +82,7 @@ def loop(bodies):
 
     step = 1
     while True:
-        update_info(step)
+        update_info(step, bodies)
         step += 1
 
         force = {}
@@ -112,12 +100,8 @@ def loop(bodies):
         # Update velocities
         for body in bodies:
             fx, fy = force[body]
-            print(body.name)
-            print('Starting vel.    =', body.vx, body.vy)
             body.vx += fx / body.mass * timestep
             body.vy += fy / body.mass * timestep
-            print('Vel. after step  =', body.vx, body.vy)
-            print()
 
             # Update positions
             body.px += body.vx * timestep
