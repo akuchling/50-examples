@@ -4,6 +4,14 @@ import unittest, math
 import gravity
 
 class TestGravity(unittest.TestCase):
+    def test_attraction_error(self):
+        b1 = gravity.Body()
+        b2 = gravity.Body()
+        self.assertRaises(ValueError, b1.attraction, b1)
+
+        b1.px = b1.py = b2.px = b2.py = 1
+        self.assertRaises(ValueError, b1.attraction, b2)
+
     def test_attraction(self):
         b1 = gravity.Body()
         b2 = gravity.Body()

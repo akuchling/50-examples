@@ -19,6 +19,7 @@ class Body(Turtle):
     px, py: x, y positions in m
     """
     
+    name = 'Body'
     mass = None
     vx = vy = 0.0
     px = py = 0.0
@@ -28,17 +29,28 @@ class Body(Turtle):
 
         Returns the force exerted upon this body by the other body.
         """
+        # Report an error if the other object is the same as this one.
+        if self is other:
+            raise ValueError("Attraction of object %r to itself requested"
+                             % self.name)
+
         # Compute the distance of the other body.
         sx, sy = self.px, self.py
         ox, oy = other.px, other.py
         dx = (ox-sx)
         dy = (oy-sy)
-        r = math.sqrt(dx**2 + dy**2)
+        d = math.sqrt(dx**2 + dy**2)
+
+        # Report an error if the distance is zero; otherwise we'll
+        # get a ZeroDivisionError exception further down.
+        if d == 0:
+            raise ValueError("Collision between objects %r and %r"
+                             % (self.name, other.name))
 
         # Compute the force of attraction
-        f = G * self.mass * other.mass / (r**2)
+        f = G * self.mass * other.mass / (d**2)
 
-        # Compute the direction
+        # Compute the direction of the force.
         theta = math.atan2(dy, dx)
         fx = math.cos(theta) * f
         fy = math.sin(theta) * f
@@ -69,11 +81,12 @@ def loop(bodies):
         # Update velocities
         for body in bodies:
             fx, fy = force[body]
-            ##print(body.vx, body.vy)
+            print(body.name)
+            print('Starting vel.    =', body.vx, body.vy)
             body.vx += fx / body.mass * timestep
             body.vy += fy / body.mass * timestep
-            ##print(body.vx, body.vy)
-            ##print()
+            print('Vel. after step  =', body.vx, body.vy)
+            print()
 
             # Update positions
             body.px += body.vx * timestep
@@ -84,16 +97,19 @@ def loop(bodies):
 
 def main():
     sun = Body()
+    sun.name = 'Sun'
     sun.mass = 1.98892 * 10**30
     sun.pencolor('yellow')
 
     earth = Body()
+    earth.name = 'Earth'
     earth.mass = 5.9742 * 10**24
     earth.px = -1*AU
     earth.vy = 29.783 * 1000            # 29.783 km/sec
     earth.pencolor('blue')
 
     #random = Body()
+    #random.name = 'Random'
     #random.mass = 10**20
     #random.px = -.5*AU
     #random.vy = -35 * 1000
