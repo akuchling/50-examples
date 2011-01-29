@@ -31,6 +31,11 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
+	$(SPHINXBUILD) -b html -Dhtml_static_path= $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+fullhtml:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
