@@ -13,7 +13,11 @@ http://www.nybooks.com/articles/archives/2010/feb/11/the-chess-master-and-the-co
 
 Feng-hsiung Hsu, "Behind Deep Blue"
 
+General CS ideas
+------------------------------
 
-
+CMU's CS 15-251: Great Theoretical Ideas in Computer Science
+https://colormygraph.ugrad.cs.cmu.edu/
+http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15251/Site/current/Calendar/calendar.html
 
 
