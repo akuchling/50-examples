@@ -67,6 +67,9 @@ Sun/Earth/Venus example.  When you run the program, you can see how
 long it takes for the plot to complete an entire orbit; for Earth it's
 the expected 365 days and for Venus it's 224 days.
 
+Lessons Learned
+========================================
+
 Each simulation step requires calculating :math:`N * (N-1)` distances
 and attractions, so the time complexity is :math:`O(N^2)`.  On a
 laptop or desktop, the display will be visible changing
