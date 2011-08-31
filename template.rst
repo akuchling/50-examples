@@ -20,11 +20,19 @@ Present the large code example
 Code Discussion
 ========================================
 
+Explore interesting aspects of the code
 
 Lessons Learned
 ========================================
 
+Does this program demonstrate any interesting themes 
+about programming or about its subject matter?
+
 
 References
 ========================================
+
+Relevant web pages, books, with an annotation about why it's notable
+or worthwhile.
+
 
