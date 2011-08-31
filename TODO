@@ -2,7 +2,7 @@
 Structure
 ---------
 
-Each example is 5-10 pages.
+Each example is no more than 5-10 pages.
 Aiming for 50 examples, or 30-60.
 Uses Python3 and the turtle module for graphics throughout.
 
@@ -11,8 +11,9 @@ Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
 To be written
 -------------
 
+* Background: Plotting with turtle graphics
+* Background: Big-O notation
 * Graphics
-*** Plotting with turtle graphics
 *** Rendering fractals
 *** (draft) Gravitational simulation
 *** Game of Life
