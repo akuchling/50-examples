@@ -1,5 +1,5 @@
 
-Problem: Drawing Graphics
+Background: Drawing Graphics
 --------------------------------------------------
 
 Throughout the rest of this book, we'll need to display graphical
@@ -65,7 +65,8 @@ up a separate window (called a :class:`Screen`)
 on your computer's display. You can call 
 ``turtle.Screen`` to get an object representing this window;
 it has a few methods such as :meth:`title`
-to set the title, and :meth:`clear` to restore the screen's contents
+to set the title, :meth:`screensize` to get the size of the canvas, 
+and :meth:`clear` to restore the screen's contents
 to their initial state.
 
 A :class:`Turtle` object has many methods that can be grouped into
@@ -119,21 +120,36 @@ The turtle can draw a line behind it as it moves.  To control this line:
   RGB color specification such as "#33cc8c".  (The database of color names is
   limited, so specific names such as  "crimson" or "octarine" won't work,
   but simple names such as "red", "blue", and "green" are understood.)
+* ``pensize(**width**)`` sets the width of the line traced.  The
+  width starts out as 1 pixel, but can be changed using this method.
 
-* dot/stamp/clearstamp/reset
+The turtle can also stamp its image on the display:
 
+* :meth:`stamp` records a copy of the turtle's shape onto the canvas.
+  This method returns an integer stamp ID, so that you can remove the image
+  later by calling :meth:`clearstamp` and passing it the ID.
+* ``dot(**size**, **color**)`` draws a circular dot of the given size and
+  color.  The color is optional; if not supplied, the turtle's current
+  pen color is used.
+* The turtle :meth:`reset` method clears all of the drawings made by that
+  turtle and returns it to the home position.
 
 
 Example
 ========================================
 
-Large example: 
-* draw a border around the canvas
-* draw a set of nested squares, varying the color
-* draw a sine curve
+This program doesn't exercise every single method -- that would be
+tediously long -- but it shows what turtle graphics are like by
+drawing some simple graphics and then waiting for a keypress before
+exiting.
+
+.. literalinclude:: /code/turtledemo.py
+   :linenos:
+
 
 Code Discussion
 ========================================
+
 
 
 .. _turtle-references:
