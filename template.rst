@@ -16,6 +16,8 @@ Solution
 
 Present the large code example
 
+.. literalinclude:: /code/whatever.py
+   :linenos:
 
 Code Discussion
 ========================================
