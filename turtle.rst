@@ -21,9 +21,7 @@ Unfortunately the module doesn't support printed output,
 but I think that isn't much of a disadvantage because interactive
 graphics are more interesting for modern learners.  
 
-.. 
-
-    XXX find a photo of a turtle robot
+.. XXX find a photo of a turtle robot
 
 Turtle graphics are an approach with a long history.  Originally the
 turtle was a physical object, a robot that could be placed on a large
@@ -44,8 +42,7 @@ states (turtles can draw lines in a particular colour when they move
 or leave no trace) and actions (turning left or right; moving forward
 or backward.
 
-..
-    XXX add a diagram of the turtle
+.. XXX add a diagram of the turtle
     
 Here's a brief overview of the functions and methods used in this
 book.  Consult :ref:`refcard-turtle` when you need some help
@@ -145,6 +142,10 @@ exiting.
 
 .. literalinclude:: /code/turtledemo.py
    :linenos:
+
+The display resulting from this program is:
+
+.. image:: _static/turtledemo.png
 
 
 Code Discussion
