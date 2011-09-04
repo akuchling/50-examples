@@ -112,9 +112,9 @@ The turtle can draw a line behind it as it moves.  To control this line:
   turtle will leave a line as it moves.
 * :meth:`penup` raises the pen from the paper, so the turtle will move
   without leaving any trace.
-* ``pencolor(**color**)`` sets the color of the line traced.  **color**
-  is a string giving a primary color name, such as "red" or "yellow", or an
-  RGB color specification such as "#33cc8c".  (The database of color names is
+* ``pencolor(**color**)`` sets the colour of the line traced.  **color**
+  is a string giving a primary colour name, such as "red" or "yellow", or an
+  RGB colour specification such as "#33cc8c".  (The database of colour names is
   limited, so specific names such as  "crimson" or "octarine" won't work,
   but simple names such as "red", "blue", and "green" are understood.)
 * ``pensize(**width**)`` sets the width of the line traced.  The
@@ -126,8 +126,8 @@ The turtle can also stamp its image on the display:
   This method returns an integer stamp ID, so that you can remove the image
   later by calling :meth:`clearstamp` and passing it the ID.
 * ``dot(**size**, **color**)`` draws a circular dot of the given size and
-  color.  The color is optional; if not supplied, the turtle's current
-  pen color is used.
+  colour.  The colour is optional; if not supplied, the turtle's current
+  pen colour is used.
 * The turtle :meth:`reset` method clears all of the drawings made by that
   turtle and returns it to the home position.
 
@@ -146,7 +146,9 @@ exiting.
 The display resulting from this program is:
 
 .. image:: _static/turtledemo.png
-
+   :alt: Display produced by turtledemo.py, showing a red border containing
+         several multicoloured squares.
+   :align: center
 
 Code Discussion
 ========================================
