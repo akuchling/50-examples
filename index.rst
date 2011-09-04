@@ -17,6 +17,7 @@ Contents:
    intro.rst
    turtle.rst
    gravity.rst
+   refcard-turtle.rst
 
 Indices and tables
 ==================
