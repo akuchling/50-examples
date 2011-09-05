@@ -11,11 +11,13 @@ Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
 To be written
 -------------
 
-* Background: Plotting with turtle graphics
-* Background: Big-O notation
+* (done) Background: Plotting with turtle graphics
+* (done) Background: Algorithms
+* (done) Background: Computational complexity
+* Turtle graphics reference card
 * Graphics
 *** Rendering fractals
-*** (draft) Gravitational simulation
+*** (done) Gravitational simulation
 *** Game of Life
 * Given N numbers, find the M smallest or largest.
 * Minimax game trees: tic-tac-toe or Hnefatafl?
