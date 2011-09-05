@@ -15,6 +15,8 @@ Contents:
    :maxdepth: 1
 
    intro.rst
+   algorithms.rst
+   complexity.rst
    turtle.rst
    gravity.rst
    refcard-turtle.rst
