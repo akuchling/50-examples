@@ -3,30 +3,29 @@ Structure
 ---------
 
 Each example is no more than 5-10 pages.
+
 Aiming for 50 examples, or 30-60.
+
 Uses Python3 and the turtle module for graphics throughout.
+
+May use third-party libraries to avoid having re-implement basic
+data structures from scratch.
 
 Look through: the A.K. Dewdney books; Cormen-Leiserson-Rivest; Sedgewick.
 
 To be written
 -------------
 
+* Introduction
+* Glossary?
 * (done) Background: Plotting with turtle graphics
 * (done) Background: Algorithms
 * (done) Background: Computational complexity
 * Turtle graphics reference card
-* Graphics
-*** Rendering fractals
-*** (done) Gravitational simulation
-*** Game of Life
 * Given N numbers, find the M smallest or largest.
 * Minimax game trees: tic-tac-toe or Hnefatafl?
 * Graphs: analyzing social networks
 * Tree search: assemble a binary tree and then search it.
-* Photo manipulation
-*** Stretching/shrinking an image
-*** Smart shrinking
-*** Modify contrast/brightness.
 * Audio manipulation
 *** Evening out the volume level.
 *** Apply an FFT or filtering.
@@ -35,8 +34,23 @@ To be written
 * RSA encryption
 * Random numbers: calculating pi by random numbers
 * Queuing: simulate a grocery store and a bank queue.
-* Spline curves
 * Simplex programming
+* Graphics
+*** Rendering fractals
+*** (done) Gravitational simulation
+*** Game of Life
+*** Spline curves
+*** Photo manipulation
+***** Stretching/shrinking an image
+***** Smart shrinking
+***** Modify contrast/brightness.
+
+Other tasks
+-----------
+
+* Put copyright/license info in the template & all the files.
+* Draw all of the diagrams needed.
+* Prepare an epub version.
 
 Vague ideas
 -----------
@@ -48,3 +62,21 @@ Vague ideas
 * Modules to show: difflib; sqlite3
 * Data structures: heaps, XXX
 * Geometric data structures: XXX
+* Graphs
+  * Graph concepts
+  * Different graph representations (Node objects, sets of arcs)
+  * Traversal
+  * Topological sorts
+    * Example: working out file dependencies
+  * Connected-components
+  * Spanning trees
+  * Shortest paths
+Hard problems: NP-completeness
+  * P and NP
+  * NP-completeness
+    * Explanation
+    * Various examples of NP-complete problems
+    * Show that all NP-complete problems are equivalent
+  * Solving an NP-complete problem
+    * Exhaustive search
+    * Heuristics

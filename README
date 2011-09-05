@@ -4,10 +4,17 @@ programming for use in teaching.  An alternate title was "The Python
 Teaching Cookbook".  The examples are written for Python 3 (3.2 was
 used).
 
-I haven't tried finding a publisher for this book yet.
-
 Requires Sphinx for formatting; once you have Sphinx installed, type
-"make" to see the available targets in the Makefile.
+"make" to see the available targets in the Makefile.  "make html"
+will create an HTML version of the book in the build/ directory.
+
+This work is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+I haven't tried finding a publisher for this book yet, and it may
+just remain web-only.  Note that the license forbids publishing and
+selling it, though you're certainly free to print copies for your
+own private or educational use.
 
 Please send comments to <amk@amk.ca>.
 
