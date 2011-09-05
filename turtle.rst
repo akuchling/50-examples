@@ -153,7 +153,13 @@ The display resulting from this program is:
 Code Discussion
 ========================================
 
-
+One thing to learn from the demo program is that drawing functions
+such as :func:`border` and :func:`square` should be careful about the
+state of the turtle they expect at the beginning and the state it's
+left in afterwards.  A frequent error is to leave the turtle pointing
+in an unexpected direction, causing later actions to be carried out in
+the wrong place.  Watching the animated turtle usually makes such
+mistakes apparent.
 
 .. _turtle-references:
 
