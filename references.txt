@@ -20,4 +20,5 @@ CMU's CS 15-251: Great Theoretical Ideas in Computer Science
 https://colormygraph.ugrad.cs.cmu.edu/
 http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15251/Site/current/Calendar/calendar.html
 
-
+Markov chains to determine probability of different Monopoly squares:
+http://www.bewersdorff-online.de/amonopoly/
