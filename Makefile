@@ -26,6 +26,7 @@ help:
 	@echo "  changes   to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck to check all external links for integrity"
 	@echo "  doctest   to run all doctests embedded in the documentation (if enabled)"
+	@echo "  serve     to run a HTTP server on port 8000 for the HTML files"
 	@echo "  tasks     to output a list of all to-be-done markers"
 
 clean:
@@ -96,3 +97,6 @@ doctest:
 
 tasks:
 	grep XXX *.rst
+
+serve: html
+	cd $(BUILDDIR)/html ; python3 -m 'http.server'
