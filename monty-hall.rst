@@ -192,5 +192,14 @@ http://library.lanl.gov/cgi-bin/getfile?00326867.pdf
   This first simulation modelled neutrons diffusing through fissionable
   material in an effort to determine whether a chain reaction would occur.
 
-  Later in this PDF, there's a discussion of how random number
-  generators work, written by Tony Warnock.
+  (The PDF also features a discussion of how random number generators
+  work, written by Tony Warnock.)
+
+http://www.youtube.com/watch?v=0W978thuweY 
+  A condensed episode of an episode of the original game show, showing
+  Monty Hall's quick wit in action.  Notice that the original game is
+  more complicated than the Monty Hall puzzle as described above
+  because Monty has many more actions available to him: he can offer
+  the choice of an unknown prize or an unknown amount of cash, or
+  suggest trading in what you've already won for a different unknown
+  prize.
