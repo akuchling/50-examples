@@ -8,13 +8,21 @@ Requires Sphinx for formatting; once you have Sphinx installed, type
 "make" to see the available targets in the Makefile.  "make html"
 will create an HTML version of the book in the build/ directory.
 
-This work is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-
-I haven't tried finding a publisher for this book yet, and it may
-just remain web-only.  Note that the license forbids publishing and
+The English text of this work is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License.  
+Note that this license forbids publishing and
 selling it, though you're certainly free to print copies for your
 own private or educational use.
+
+If you wish to sell copies of the book or include partial sections of
+the text in your own works made available under a different license,
+please contact the author to request permission.  The software
+programs are released under the MIT license, and you are free to use
+or modify them in any way you like, including for commercial purposes
+or in other documentation projects.
+
+I haven't tried finding a publisher for this book yet, and it may
+just remain web-only.
 
 Please send comments to <amk@amk.ca>.
 
