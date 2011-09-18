@@ -1,5 +1,5 @@
 
-Problem: The Monty Hall Problem
+Simulating The Monty Hall Problem
 --------------------------------------------------
 
 The Monty Hall problem is a well-known puzzle in probability derived
