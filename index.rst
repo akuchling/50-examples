@@ -17,6 +17,9 @@ Contents:
    intro.rst
    algorithms.rst
    complexity.rst
+
+   monty-hall.rst
+
    turtle.rst
    gravity.rst
    refcard-turtle.rst
