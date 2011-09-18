@@ -35,8 +35,12 @@ more sophisticated features such as classes.
 License
 ==================================================
 
-The English text of this work is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0 Unported License.  
+The English text of this work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a
+copy of this license, visit
+http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to
+Creative Commons, 444 Castro Street, Suite 900, Mountain View,
+California, 94041, USA.
 
 This license forbids publishing and selling copies of the book, but
 you are free to print copies for your own private or educational use.

@@ -8,11 +8,16 @@ Requires Sphinx for formatting; once you have Sphinx installed, type
 "make" to see the available targets in the Makefile.  "make html"
 will create an HTML version of the book in the build/ directory.
 
-The English text of this work is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0 Unported License.  
-Note that this license forbids publishing and
-selling it, though you're certainly free to print copies for your
-own private or educational use.
+The English text of this work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a
+copy of this license, visit
+http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to
+Creative Commons, 444 Castro Street, Suite 900, Mountain View,
+California, 94041, USA.
+
+Note that the license forbids publishing and selling the book, though
+you're certainly free to print copies for your own private or
+educational use.
 
 If you wish to sell copies of the book or include partial sections of
 the text in your own works made available under a different license,
@@ -24,10 +29,8 @@ or in other documentation projects.
 I haven't tried finding a publisher for this book yet, and it may
 just remain web-only.
 
-Please send comments to <amk@amk.ca>.
+Please send questions, suggestions, and comments to <amk@amk.ca>.
 
 
 A.M. Kuchling
 amk@amk.ca
-
-
