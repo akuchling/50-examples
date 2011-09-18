@@ -26,7 +26,7 @@ def simulate(num_doors, switch, verbose):
     if verbose:
         print('Contestant chooses door {0}'.format(choice+1))
 
-    # The host opens all but two doors.  The host
+    # The host opens all but two doors.
     closed_doors = list(range(num_doors))
     while len(closed_doors) > 2:
         # Randomly choose a door to open.
@@ -42,6 +42,9 @@ def simulate(num_doors, switch, verbose):
         if verbose:
             print('Host opens door {0}'.format(door_to_remove+1))
 
+    # There are always two doors remaining.
+    assert len(closed_doors) == 2
+
     # Does the contestant want to switch their choice?
     if switch:
         if verbose:
@@ -51,7 +54,6 @@ def simulate(num_doors, switch, verbose):
         # choose the same door, so we'll remove that door as a choice.
         available_doors = list(closed_doors) # Make a copy of the list.
         available_doors.remove(choice)
-        assert len(available_doors) == 1
 
         # Change choice to the only door available.
         choice = available_doors.pop()
@@ -96,10 +98,10 @@ def main():
         if won:
             winning_switchers += 1
 
-    print('    Switching won {0:5} times out of {1} ({2}%)'.format(
+    print('    Switching won {0:5} times out of {1} ({2}% of the time)'.format(
             winning_switchers, args.trials,
             (winning_switchers / args.trials * 100 ) ))
-    print('Not switching won {0:5} times out of {1} ({2}%)'.format(
+    print('Not switching won {0:5} times out of {1} ({2}% of the time)'.format(
             winning_non_switchers, args.trials,
             (winning_non_switchers / args.trials * 100 ) ))
 
