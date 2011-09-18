@@ -15,6 +15,8 @@ Contents:
    :maxdepth: 1
 
    intro.rst
+   celsius.rst
+
    algorithms.rst
    complexity.rst
 
