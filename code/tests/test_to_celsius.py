@@ -3,7 +3,7 @@
 import unittest
 import to_celsius
 
-class TestCelsisu(unittest.TestCase):
+class TestCelsius(unittest.TestCase):
     def test_freezing(self):
         self.assertEqual(to_celsius.convert_f2c('32'), 0)
 
