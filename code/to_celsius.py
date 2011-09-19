@@ -15,7 +15,7 @@ def convert_f2c(S):
 def main():
     # If no arguments were given, print a helpful message
     if len(sys.argv) == 1:
-        print('Usage: {0} temp1 temp2 ...'.format(sys.argv[0]))
+        print('Usage: {} temp1 temp2 ...'.format(sys.argv[0]))
         sys.exit(0)
 
     # Loop over the arguments
@@ -23,11 +23,11 @@ def main():
         try:
             celsius = convert_f2c(arg)
         except ValueError:
-            print("{0!r} is not a numeric value".format(arg),
+            print("{!r} is not a numeric value".format(arg),
                   file=sys.stderr)
         else:
-            print('{0}\260F = {1:g}\260C'.format(arg, 
-                                                 round(celsius, 0)))
+            print('{}\260F = {:g}\260C'.format(arg, 
+                                               round(celsius, 0)))
 
 if __name__ == '__main__':
     main()

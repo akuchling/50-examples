@@ -19,12 +19,12 @@ def simulate(num_doors, switch, verbose):
     # Randomly choose the door hiding the prize.
     winning_door = random.randint(0, num_doors-1)
     if verbose:
-        print('Prize is behind door {0}'.format(winning_door+1))
+        print('Prize is behind door {}'.format(winning_door+1))
 
     # The contestant picks a random door, too.
     choice = random.randint(0, num_doors-1)
     if verbose:
-        print('Contestant chooses door {0}'.format(choice+1))
+        print('Contestant chooses door {}'.format(choice+1))
 
     # The host opens all but two doors.
     closed_doors = list(range(num_doors))
@@ -40,7 +40,7 @@ def simulate(num_doors, switch, verbose):
         # Remove the door from the list of closed doors.
         closed_doors.remove(door_to_remove)
         if verbose:
-            print('Host opens door {0}'.format(door_to_remove+1))
+            print('Host opens door {}'.format(door_to_remove+1))
 
     # There are always two doors remaining.
     assert len(closed_doors) == 2
@@ -48,7 +48,7 @@ def simulate(num_doors, switch, verbose):
     # Does the contestant want to switch their choice?
     if switch:
         if verbose:
-            print('Contestant switches from door {0} '.format(choice+1), end='')
+            print('Contestant switches from door {} '.format(choice+1), end='')
 
         # There are two closed doors left.  The contestant will never
         # choose the same door, so we'll remove that door as a choice.
@@ -58,7 +58,7 @@ def simulate(num_doors, switch, verbose):
         # Change choice to the only door available.
         choice = available_doors.pop()
         if verbose:
-            print('to {0}'.format(choice+1))
+            print('to {}'.format(choice+1))
 
     # Did the contestant win?
     won = (choice == winning_door)
@@ -82,7 +82,7 @@ def main():
                         help='display the results of each trial')
     args = parser.parse_args()
 
-    print('Simulating {0} trials...'.format(args.trials))
+    print('Simulating {} trials...'.format(args.trials))
 
     # Carry out the trials
     winning_non_switchers = 0

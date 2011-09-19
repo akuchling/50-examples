@@ -61,9 +61,9 @@ def update_info(step, bodies):
     
     Displays information about the status of the simulation.
     """
-    print('Step #{0}'.format(step))
+    print('Step #{}'.format(step))
     for body in bodies:
-        s = '{0:<8}  Pos.={1:>6.2f} {2:>6.2f} Vel.={3:>10.3f} {4:>10.3f}'.format(
+        s = '{:<8}  Pos.={:>6.2f} {:>6.2f} Vel.={:>10.3f} {:>10.3f}'.format(
             body.name, body.px/AU, body.py/AU, body.vx, body.vy)
         print(s)
     print()
