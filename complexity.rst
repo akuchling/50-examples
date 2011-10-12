@@ -58,10 +58,10 @@ Some of the most commonly seen complexities are:
   for the algorithm doesn't actually change as the
   problem size increases.
 
-* O(log n) is *logarithmic* complexity.:footnote:`The base used
-  to take the logarithm makes no difference, since it just
-  multiplies the operation count by a constant factor.
-  The most common base is base 2, written as log2 or lg.`
+* O(log n) is *logarithmic* complexity. The base used to take the
+  logarithm makes no difference, since it just multiplies the
+  operation count by a constant factor.  The most common base is base
+  2, written as log2 or lg.
 
   Algorithms with logarithmic complexity cope quite well with
   increasingly large problems.  Doubling the problem size
