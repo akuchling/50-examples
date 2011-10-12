@@ -11,9 +11,9 @@ Most of the world uses the Celsius scale to indicate temperatures, but
 the United States still uses the Fahrenheit scale.  We'll write a
 little script that takes Fahrenheit temperatures and prints their
 corresponding values in Celsius.  (The author, who's a Canadian living
-in the United States, first wrote this script because he could never
-remember if 85 degrees Fahrenheit is pleasantly warm or scorchingly
-hot while listening to the weather report.)
+in the United States, first wrote this script because when listening
+to weather reports he could never remember if 85 degrees Fahrenheit is
+pleasantly warm or scorchingly hot.)
 
 
 Approach
