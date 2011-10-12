@@ -9,6 +9,9 @@
 :Release: |version|
 :Date: |today|
 
+.. highlight:: python
+   :linenothreshold: 10
+
 Contents:
 
 .. toctree::
