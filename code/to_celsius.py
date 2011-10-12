@@ -26,8 +26,8 @@ def main():
             print("{!r} is not a numeric value".format(arg),
                   file=sys.stderr)
         else:
-            print('{}\N{DEGREE SIGN}F = {:g}\N{DEGREE SIGN}C'.format(arg, 
-                                               round(celsius, 0)))
+            print('{}\N{DEGREE SIGN}F = {:g}\N{DEGREE SIGN}C'.format(
+                    arg, round(celsius, 0)))
 
 if __name__ == '__main__':
     main()
