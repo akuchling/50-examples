@@ -9,7 +9,7 @@ def convert_f2c(S):
     to a Celsius temperature.
     """
     fahrenheit = float(S)
-    celsius = (fahrenheit - 32) *5/9
+    celsius = (fahrenheit - 32) * 5 / 9
     return celsius
 
 def main():
