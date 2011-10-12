@@ -38,3 +38,7 @@ Relevant web pages, books, with an annotation about why it's notable
 or worthwhile.
 
 
+.. rubric:: Footnotes
+
+.. [#f1] Text 1.
+.. [#f2] Text 2.
