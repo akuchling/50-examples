@@ -48,19 +48,105 @@ suites won't be shown in the book.
 Code Discussion
 ========================================
 
-Explore interesting aspects of the code
+Here we will dive further into the code, discussing particularly
+interesting sections of code, programming techniques, or larger
+issues.
+
+The conversion to Celsius done by the :func:`convert_f2c` function is
+a straightforward calculation.  An input string is converted to
+a floating-point value.  If there's a problem, the resulting :exc:`ValueError`
+exception is not handled here but instead is left for the caller to catch.  
+
+Notice that the :func:`main` function tries to print a helpful message 
+when no command-line arguments are provided, and it also 
+catches the :exc:`ValueError`.  For pedagogical programs like this, I will
+try to ensure the error handling is helpful to a user experimenting with 
+the script.
+
 
 Lessons Learned
 ========================================
 
-Does this program demonstrate any interesting themes 
-about programming or about its subject matter?
+Finally, does this program demonstrate any interesting themes 
+about Python, about programming in general, or about its subject matter?
+
+For this celsius example, I'll discuss Python's string :meth:`format`
+method and the mini-language it uses, since it will be used throughout
+our example programs.
+
+The strings used with the :meth:`format` method will
+contain a replacement field specification inside curly brackets (``{ }``).
+It's possible to leave the specification empty (just ``{}``)
+but we can also specify the position and type of the argument to use
+and how the resulting value should be rendered.  A few examples::
+
+    '{!r}'.format(v)     # Equivalent to repr(v)
+    '{!s}'.format(v)	 # Equivalent to str(v)
+
+    # Explicitly give the position of the argument to use for
+    # each field. Results in the string "arg2 arg1"
+    '{1} {0}'.format('arg1', 'arg2')  
+
+We can also specify formatting details such as the number of decimal
+places, style of numeric display, and left- or right-alignment.  This
+comes within the curly brackets and following a ``:`` character.  
+
+We can left-align, right-align, or center a string within 
+a desired output width, optionally giving the character to be used 
+for padding:
+  
+    >>> '{0:<15}'.format('left-justify')
+    'left-justify   '
+    >>> '{0:>15}'.format('right-justify')
+    '  right-justify'
+    >>> '{0:*^15}'.format('centered')
+    '***centered****'
+
+We can output a value in binary, octal, decimal, or hexadecimal::
+
+    >>> '{0:b}'.format(1972)
+    '11110110100'
+    >>> '{0:o}'.format(1972)
+    '3664'
+    >>> '{0:d}'.format(1972)
+    '1972'
+    >>> '{0:x}'.format(1972)
+    '7b4'
+
+We can request rounding to a specific number of decimal places, 
+exponential notation, or displaying as a percentage::
+
+    >>> '{0:d}'.format(2**32)
+    '4294967296'
+    >>> '{0:e}'.format(2**32)
+    '4.294967e+09'
+    >>> '{0:%}'.format( 45 / 70 )
+    '64.285714%'
+    >>> '{0:.2%}'.format( 45 / 70 )
+    '64.29%'
+    
+The complete syntax for format strings is documented in
+the Python Library Reference at 
+<http://docs.python.org/library/string.html#format-string-syntax>.
 
 
 References
 ========================================
 
-Relevant web pages, books, with an annotation about why it's notable
-or worthwhile.
+The references in each section will be to 
+useful web pages, Wikipedia entries, software libraries,
+and books.  Generally each reference is annotated with a short
+explanation of what's in it and why it might be of interest, to help
+you in deciding which references to pursue.
 
-
+http://books.google.com/books?id=lnmrSAAACAAJ
+  "A Matter of Degrees: What Temperature Reveals About the Past and
+  Future of Our Species, Planet and Universe", by Gino Segré, is an
+  entertaining tour through science using the concept of temperature
+  as the connecting thread, including: biological aspects such as the
+  regulation of body temperature and the thermophile species that
+  cluster around deep-sea superheated vents; the theoretical arguments
+  underlying global warming; the discovery of the laws of
+  thermodynamics; low-temperature phenomena such as superconductivity
+  and helium's superfluidity; and the temperature of the
+  cosmic microwave background.
