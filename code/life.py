@@ -133,7 +133,7 @@ class LifeBoard:
         for i in range(0, self.X):
             for j in range(0, self.Y):
                 self.draw(i, j)
-        
+        turtle.update()
 
 
 def display_menu(stdscr, menu_y):
@@ -211,13 +211,13 @@ def main():
     scr = turtle.Screen()
     turtle.hideturtle()
     turtle.speed('fastest')
-    turtle.delay(0)
+    turtle.tracer(0, 0)
     turtle.penup()
     turtle.shape('circle')
     turtle.shapesize(1, 1, 0)
 
     xsize, ysize = scr.screensize()
-    board = LifeBoard(10, 10)#xsize // CELL_SIZE, ysize // CELL_SIZE)
+    board = LifeBoard(xsize // CELL_SIZE, ysize // CELL_SIZE)
     board.set(3, 5)
     board.set(4, 5)
     board.set(5, 5)
