@@ -1,4 +1,6 @@
 *~
+*.pyc
+*.pyo
 build/
 __pycache__
 _static/jsMath/fonts/*
