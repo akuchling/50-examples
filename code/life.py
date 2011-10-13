@@ -136,14 +136,6 @@ class LifeBoard:
         turtle.update()
 
 
-def display_menu(stdscr, menu_y):
-    "Display the menu of possible keystroke commands"
-    erase_menu(stdscr, menu_y)
-    stdscr.addstr(menu_y, 4,
-                  'Use the cursor keys to move, and space or Enter to toggle a cell.')
-    stdscr.addstr(menu_y+1, 4,
-                  'E)rase the board, R)andom fill, S)tep once or C)ontinuously, Q)uit')
-
 def keyloop(stdscr):
     # Clear the screen and display the menu of keys
     stdscr.clear()
@@ -185,9 +177,6 @@ def keyloop(stdscr):
                     stdscr.addstr(0,0, '+')
                     stdscr.refresh()
 
-                stdscr.nodelay(0)       # Disable nodelay mode
-                display_menu(stdscr, menu_y)
-
             elif c in 'Ee':
                 board.erase()
             elif c in 'Qq':
@@ -206,8 +195,32 @@ def keyloop(stdscr):
             # Ignore incorrect keys
             pass
 
+def display_help_window():
+    from turtle import TK
+    root = TK.Tk()
+    frame = TK.Frame()
+    canvas = TK.Canvas(root, width=300, height=100, bg="white")
+    canvas.pack()
+    help_screen = turtle.TurtleScreen(canvas)
+    help_t = turtle.RawTurtle(help_screen)
+    help_t.penup()
+
+    y = 0
+    for s in ("Click on cells to make them alive or dead.",
+              "Keyboard commands:",
+              " E)rase the board",
+              " R)andom fill",
+              " S)tep once or",
+              " C)ontinuously",
+              " Q)uit"):
+        help_t.setpos(0, y)
+        help_t.write(s)
+        y += 10
+    
 
 def main():
+    display_help_window()
+
     scr = turtle.Screen()
     turtle.mode('standard')
     xsize, ysize = scr.screensize()
@@ -220,10 +233,8 @@ def main():
     turtle.shape('circle')
     turtle.shapesize(1, 1, 0)
 
+
     board = LifeBoard(xsize // CELL_SIZE, ysize // CELL_SIZE)
-    board.set(3, 5)
-    board.set(4, 5)
-    board.set(5, 5)
     board.makeRandom()
     board.display()
     while True:
