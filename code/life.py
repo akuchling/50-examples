@@ -123,7 +123,7 @@ class LifeBoard:
             turtle.setheading(0)
             turtle.begin_fill()
             for i in range(4):
-                turtle.forward(CELL_SIZE)
+                turtle.forward(CELL_SIZE-1)
                 turtle.right(90)
             turtle.end_fill()
             
@@ -209,6 +209,10 @@ def keyloop(stdscr):
 
 def main():
     scr = turtle.Screen()
+    turtle.mode('standard')
+    xsize, ysize = scr.screensize()
+    turtle.setworldcoordinates(0, 0, xsize, ysize)
+
     turtle.hideturtle()
     turtle.speed('fastest')
     turtle.tracer(0, 0)
@@ -216,7 +220,6 @@ def main():
     turtle.shape('circle')
     turtle.shapesize(1, 1, 0)
 
-    xsize, ysize = scr.screensize()
     board = LifeBoard(xsize // CELL_SIZE, ysize // CELL_SIZE)
     board.set(3, 5)
     board.set(4, 5)
