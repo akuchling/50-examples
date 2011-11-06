@@ -17,6 +17,7 @@
 #   Make board updates faster
 #
 
+import sys
 import turtle
 import random
 
@@ -233,13 +234,54 @@ def main():
     turtle.shape('circle')
     turtle.shapesize(1, 1, 0)
 
+    board = LifeBoard(xsize // CELL_SIZE, 1 + ysize // CELL_SIZE)
 
-    board = LifeBoard(xsize // CELL_SIZE, ysize // CELL_SIZE)
+    # Set up mouse bindings
+    def toggle(x, y):
+        cell_x = x // CELL_SIZE
+        cell_y = y // CELL_SIZE
+    turtle.onclick(turtle.listen)
+
     board.makeRandom()
     board.display()
-    while True:
+
+    # Set up key bindings
+    def erase():
+        board.erase()
+        board.display()
+    turtle.onkey(erase, 'e')
+    def makeRandom():
+        board.makeRandom()
+        board.display()
+    turtle.onkey(makeRandom, 'r')
+    turtle.onkey(sys.exit, 'q')
+    turtle.listen()
+
+    # Set up keys for performing generation steps, either one-at-a-time or not.
+    continuous = False
+    def step_once():
+        nonlocal continuous
+        continuous = False
+        perform_step()
+
+    def step_continuous():
+        nonlocal continuous
+        continuous = True
+        perform_step()
+
+    def perform_step():
         board.step()
         board.display()
+        # In continuous mode, we set a timer to display another generation
+        # after 25 millisenconds.
+        if continuous:
+            turtle.ontimer(perform_step, 25)
+
+    turtle.onkey(step_once, 's')
+    turtle.onkey(step_continuous, 'c')
+
+    # Enter the Tk main loop
+    turtle.mainloop()
 
 if __name__ == '__main__':
     main()
