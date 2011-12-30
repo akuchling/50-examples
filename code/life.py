@@ -47,36 +47,48 @@ class LifeBoard:
         scr -- curses screen object to use for display
         char -- character used to render live cells (default: '*')
         """
-        self.state = {}
+        self.state = set()
         self.X, self.Y = xsize, ysize
 
+    def is_legal(self, x, y):
+        "Returns true if the x,y coordinates are legal for this board."
+        return (0 <= x < self.X) and (0 <= y < self.Y)
+
     def set(self, x, y):
-        """Set a cell to the live state"""
-        if x<0 or self.X<=x or y<0 or self.Y<=y:
+        """Set a cell to the live state."""
+        if not self.is_legal(x, y):
             raise ValueError("Coordinates {}, {} out of range 0..{}, 0..{}".format(
-                    (x, y, self.X, self,Y)))
+                    x, y, self.X, self.Y))
                              
         key = (x,y)
-        self.state[key] = 1
+        self.state.add(key)
+
+    def makeRandom(self):
+        "Fill the board with a random pattern"
+        self.erase()
+        for i in range(0, self.X):
+            for j in range(0, self.Y):
+                if random.random() > 0.5:
+                    self.set(i, j)
 
     def toggle(self, x, y):
-        """Toggle a cell's state between live and dead"""
-        if x<0 or self.X<=x or y<0 or self.Y<=y:
+        """Toggle a cell's state between live and dead."""
+        if not self.is_legal(x, y):
             raise ValueError("Coordinates {}, {} out of range 0..{}, 0..{}".format(
-                    (x, y, self.X, self,Y)))
+                    x, y, self.X, self.Y))
         key = (x,y)
-        if self.state.has_key(key):
-            del self.state[key]
+        if key in self.state:
+            self.state.remove(key)
         else:
-            self.state[key] = None
+            self.state.add(key)
 
     def erase(self):
-        """Clear the entire board"""
+        """Clear the entire board."""
         self.state.clear()
 
     def step(self):
         "Compute one generation, updating the display."
-        d = {}
+        d = set()
         for i in range(0, self.X):
             L = range( max(0, i-1), min(self.X, i+2) )
             for j in range(0, self.Y):
@@ -87,27 +99,19 @@ class LifeBoard:
                         if (l, k) in self.state:
                             s += 1
                 s -= live
-                #print(d)
-                #print(i, j, s, live)
+                ##print(d)
+                ##print(i, j, s, live)
                 if s == 3:
                     # Birth
-                    d[(i,j)] = None
+                    d.add((i,j))
                 elif s == 2 and live: 
                     # Survival
-                    d[(i,j)] = self.state[(i,j)]
+                    d.add((i,j))
                 elif live:
                     # Death
                     pass
 
         self.state = d
-
-    def makeRandom(self):
-        "Fill the board with a random pattern"
-        self.erase()
-        for i in range(0, self.X):
-            for j in range(0, self.Y):
-                if random.random() > 0.5:
-                    self.set(i, j)
 
     #
     # Display-related methods
@@ -115,17 +119,16 @@ class LifeBoard:
     def draw(self, x, y):
         "Update the cell (x,y) on the display."
         turtle.penup()
-        turtle.setpos(x*CELL_SIZE, y*CELL_SIZE)
         key = (x,y)
         if key in self.state:
+            turtle.setpos(x*CELL_SIZE, y*CELL_SIZE)
             turtle.color('black')
-
             turtle.pendown()
             turtle.setheading(0)
             turtle.begin_fill()
             for i in range(4):
                 turtle.forward(CELL_SIZE-1)
-                turtle.right(90)
+                turtle.left(90)
             turtle.end_fill()
             
     def display(self):
@@ -137,86 +140,31 @@ class LifeBoard:
         turtle.update()
 
 
-def keyloop(stdscr):
-    # Clear the screen and display the menu of keys
-    stdscr.clear()
-    stdscr_y, stdscr_x = stdscr.getmaxyx()
-    menu_y = (stdscr_y-3)-1
-    display_menu(stdscr, menu_y)
-
-    # Allocate a subwindow for the Life board and create the board object
-    subwin = stdscr.subwin(stdscr_y-3, stdscr_x, 0, 0)
-    board = LifeBoard(subwin, char=ord('*'))
-    board.display(update_board=False)
-
-    # xpos, ypos are the cursor's position
-    xpos, ypos = board.X//2, board.Y//2
-
-    # Main loop:
-    while (1):
-        stdscr.move(1+ypos, 1+xpos)     # Move the cursor
-        c = stdscr.getch()                # Get a keystroke
-        if 0<c<256:
-            c = chr(c)
-            if c in ' \n':
-                board.toggle(ypos, xpos)
-            elif c in 'Cc':
-                erase_menu(stdscr, menu_y)
-                stdscr.addstr(menu_y, 6, ' Hit any key to stop continuously '
-                              'updating the screen.')
-                stdscr.refresh()
-                # Activate nodelay mode; getch() will return -1
-                # if no keystroke is available, instead of waiting.
-                stdscr.nodelay(1)
-                while (1):
-                    c = stdscr.getch()
-                    if c != -1:
-                        break
-                    stdscr.addstr(0,0, '/')
-                    stdscr.refresh()
-                    board.display()
-                    stdscr.addstr(0,0, '+')
-                    stdscr.refresh()
-
-            elif c in 'Ee':
-                board.erase()
-            elif c in 'Qq':
-                break
-            elif c in 'Rr':
-                board.makeRandom()
-                board.display(update_board=False)
-            elif c in 'Ss':
-                board.display()
-            else: pass                  # Ignore incorrect keys
-        elif c == curses.KEY_UP and ypos>0:            ypos -= 1
-        elif c == curses.KEY_DOWN and ypos<board.Y-1:  ypos += 1
-        elif c == curses.KEY_LEFT and xpos>0:          xpos -= 1
-        elif c == curses.KEY_RIGHT and xpos<board.X-1: xpos += 1
-        else:
-            # Ignore incorrect keys
-            pass
-
 def display_help_window():
     from turtle import TK
     root = TK.Tk()
     frame = TK.Frame()
-    canvas = TK.Canvas(root, width=300, height=100, bg="white")
+    canvas = TK.Canvas(root, width=300, height=200, bg="white")
     canvas.pack()
     help_screen = turtle.TurtleScreen(canvas)
     help_t = turtle.RawTurtle(help_screen)
     help_t.penup()
+    help_t.hideturtle()
+    help_t.speed('fastest')
 
-    y = 0
+    width, height = help_screen.screensize()
+    line_height = 20
+    y = height / 2 - 30
     for s in ("Click on cells to make them alive or dead.",
               "Keyboard commands:",
               " E)rase the board",
               " R)andom fill",
               " S)tep once or",
-              " C)ontinuously",
+              " C)ontinuously -- use 'S' to resume stepping",
               " Q)uit"):
-        help_t.setpos(0, y)
-        help_t.write(s)
-        y += 10
+        help_t.setpos(-(width / 2), y)
+        help_t.write(s, font=('sans-serif', 14, 'normal'))
+        y -= line_height
     
 
 def main():
@@ -231,8 +179,6 @@ def main():
     turtle.speed('fastest')
     turtle.tracer(0, 0)
     turtle.penup()
-    turtle.shape('circle')
-    turtle.shapesize(1, 1, 0)
 
     board = LifeBoard(xsize // CELL_SIZE, 1 + ysize // CELL_SIZE)
 
@@ -240,7 +186,12 @@ def main():
     def toggle(x, y):
         cell_x = x // CELL_SIZE
         cell_y = y // CELL_SIZE
-    turtle.onclick(turtle.listen)
+        if board.is_legal(cell_x, cell_y):
+            board.toggle(cell_x, cell_y)
+            board.display()
+
+    turtle.onscreenclick(turtle.listen)
+    turtle.onscreenclick(toggle)
 
     board.makeRandom()
     board.display()
@@ -250,12 +201,13 @@ def main():
         board.erase()
         board.display()
     turtle.onkey(erase, 'e')
+
     def makeRandom():
         board.makeRandom()
         board.display()
     turtle.onkey(makeRandom, 'r')
+
     turtle.onkey(sys.exit, 'q')
-    turtle.listen()
 
     # Set up keys for performing generation steps, either one-at-a-time or not.
     continuous = False
@@ -281,6 +233,7 @@ def main():
     turtle.onkey(step_continuous, 'c')
 
     # Enter the Tk main loop
+    turtle.listen()
     turtle.mainloop()
 
 if __name__ == '__main__':
