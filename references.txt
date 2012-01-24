@@ -22,3 +22,6 @@ http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15251/Site/current/Calendar/
 
 Markov chains to determine probability of different Monopoly squares:
 http://www.bewersdorff-online.de/amonopoly/
+
+GFDL graph algorithm textbook:
+http://code.google.com/p/graphbook/
