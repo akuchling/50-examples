@@ -201,4 +201,4 @@ latex_documents = [
 intersphinx_mapping = {'http://docs.python.org/': None}
 
 jsmath_path = 'jsMath/easy/load.js'
-
+highlight_language = 'python3'
