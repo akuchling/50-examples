@@ -1,4 +1,10 @@
 
+PyCon lecture
+------------------------------
+
+Raymond Hettinger, PyCon 2009: Easy AI With Python
+http://blip.tv/pycon-us-videos-2009-2010-2011/easy-ai-with-python-1957038
+
 PyGame
 ------------------------------
 
