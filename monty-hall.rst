@@ -29,7 +29,7 @@ The game is played like this:
 4. The contestant either chooses to switch doors, or opts to stick with
    the first choice.
 
-4. Monty calls for  the remaining two doors to open, and the contestant
+5. Monty calls for  the remaining two doors to open, and the contestant
    wins whatever is behind their chosen door.
 
 Let's say a hypothetical contestant chooses door #2.  Monty might then

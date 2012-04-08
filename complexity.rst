@@ -61,7 +61,7 @@ Some of the most commonly seen complexities are:
 * O(log n) is *logarithmic* complexity. The base used to take the
   logarithm makes no difference, since it just multiplies the
   operation count by a constant factor.  The most common base is base
-  2, written as log2 or lg.
+  2, written as :math:`log_2` or :math:`lg`.
 
   Algorithms with logarithmic complexity cope quite well with
   increasingly large problems.  Doubling the problem size

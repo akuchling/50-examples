@@ -52,9 +52,9 @@ module's features.
 
 (The module often has synonyms for the same action; I've chosen
 the one I think is the clearest.  For example, the methods
-``backward(**dist**)``, ``back(**dist**)``, and ``bk(**dist**)``
+``backward(dist)``, ``back(dist)``, and ``bk(dist)``
 all do the same thing, moving the turtle backwards.  I've chosen
-to use ``back(**dist**)`` consistently.)
+to use ``back(dist)`` consistently.)
 
 You create a turtle by calling ``turtle.Turtle()``.  Doing this will
 automatically pop
@@ -69,17 +69,17 @@ to their initial state.
 A :class:`Turtle` object has many methods that can be grouped into
 families.  There are methods for  controlling the turtle's motion:
 
-* ``forward(**distance**)`` moves the turtle forward **distance** pixels, in
+* ``forward(distance)`` moves the turtle forward **distance** pixels, in
   whatever direction the turtle is pointing.
-* ``back(**distance**)`` moves backward **distance** pixels.
-* ``left(**angle**)`` and ``right(**angle**)`` change the turtle's orientation
+* ``back(distance)`` moves backward **distance** pixels.
+* ``left(angle)`` and ``right(angle)`` change the turtle's orientation
   without moving it.  By default angles are measured in degrees, but you
   can call the turtle's :meth:`radians` method to use radians in future 
   calls to :meth:`left` and :meth:`right`.
 * The turtle's movements aren't normally performed instantly, but
   instead are slowed down and animated so that the eye can follow what
   the turtle is doing.  You can change the speed of the turtle's motion
-  by calling ``speed(**value**)``, where **value** is a string giving
+  by calling ``speed(value)``, where **value** is a string giving
   a speed; "fastest" results in instananeous motion,
   and "fast", "normal", "slow", and "slowest" are progressively slower 
   speeds.
@@ -98,7 +98,7 @@ To read the turtle's position and heading:
 
 To move the turtle to a particular coordinate and orientation:
 
-* ``setpos(**x**, **y**)`` moves the turtle to the given coordinate,
+* ``setpos(x, y)`` moves the turtle to the given coordinate,
   drawing a line if the pen is down.  You can also provide a pair of 
   coordinates as a single argument.
 * ``setheading(angle)`` sets the turtle's orientation to **angle**.
@@ -112,12 +112,12 @@ The turtle can draw a line behind it as it moves.  To control this line:
   turtle will leave a line as it moves.
 * :meth:`penup` raises the pen from the paper, so the turtle will move
   without leaving any trace.
-* ``pencolor(**color**)`` sets the colour of the line traced.  **color**
+* ``pencolor(color)`` sets the colour of the line traced.  **color**
   is a string giving a primary colour name, such as "red" or "yellow", or an
   RGB colour specification such as "#33cc8c".  (The database of colour names is
   limited, so specific names such as  "crimson" or "octarine" won't work,
   but simple names such as "red", "blue", and "green" are understood.)
-* ``pensize(**width**)`` sets the width of the line traced.  The
+* ``pensize(width)`` sets the width of the line traced.  The
   width starts out as 1 pixel, but can be changed using this method.
 
 The turtle can also stamp its image on the display:
@@ -125,7 +125,7 @@ The turtle can also stamp its image on the display:
 * :meth:`stamp` records a copy of the turtle's shape onto the canvas.
   This method returns an integer stamp ID, so that you can remove the image
   later by calling :meth:`clearstamp` and passing it the ID.
-* ``dot(**size**, **color**)`` draws a circular dot of the given size and
+* ``dot(size, color)`` draws a circular dot of the given size and
   colour.  The colour is optional; if not supplied, the turtle's current
   pen colour is used.
 * The turtle :meth:`reset` method clears all of the drawings made by that
