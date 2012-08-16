@@ -1,13 +1,12 @@
-
 Background: Algorithms
 --------------------------------------------------
 
 An *algorithm* specifies a series of steps that perform a particular
 computation or task.  Algorithms were originally born as part of
-mathematics -- the word "algorithm" comes from the Arabic writer XXX,
--- but currently the word is strongly associated with computer
-science.  Throughout this book we'll examine a number of different
-algorithms to perform a variety of tasks.
+mathematics -- the word "algorithm" comes from the Arabic writer 
+Muḥammad ibn Mūsā al-Khwārizmī, -- but currently the word is strongly 
+associated with computer science.  Throughout this book we'll examine 
+a number of different algorithms to perform a variety of tasks.
 
 Algorithms resemble recipes.  Recipes tell you how to accomplish a
 task by performing a number of steps.  For example, to bake a cake the
