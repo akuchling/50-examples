@@ -64,6 +64,7 @@ Vague ideas
 * Modules to show: difflib; sqlite3
 * Data structures: heaps, XXX
 * Geometric data structures: XXX
+*** Gerrymandering http://rangevoting.org/GerryExamples.html
 * Graphs
   * Graph concepts
   * Different graph representations (Node objects, sets of arcs)
