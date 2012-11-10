@@ -27,6 +27,8 @@ Contents:
 
    turtle.rst
    gravity.rst
+   life.rst
+
    refcard-turtle.rst
 
 Indices and tables
