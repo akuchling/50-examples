@@ -13,12 +13,17 @@ which you can play and experiment.
 Life takes place on a two-dimensional grid of square cells.  Each
 square cell can be either alive or dead (full or empty).
 
-.. XXX diagram of some life cells
+.. figure:: illustrations/life-example.svg
+   :alt: Example of a Life board.
+  
+   Example of a Life board.  Cell **x**'s eight neighbours are numbered.
 
 The simulation is carried out at fixed time steps; every time step,
 all the cells on the grid can switch from dead to alive, or alive to
-dead, depending on four simple rules that only depend on the cell's
-eight immediate neighbours.
+dead, depending on four simple rules that only depend on a given
+cell's eight immediate neighbours.  Let's take the cell **x** in the
+diagram, whose neighbours have been numbered 1 through 8 in the
+diagram.
 
 If the cell is dead:
 
@@ -48,12 +53,13 @@ occur after starting with five live cells in a row.
 
 This pattern ends up in a cycle that repeats itself endlessly.
 Researchers in Life have coined many terms for different types of
-pattern, and this one is called an **oscillator**.  `The wiki at
-ConwayLife.com <http://www.conwaylife.com/wiki/Main_Page>` describes
-many such terms, such as oscillators, "still life" patterns (that are
-stable and don't change), spaceships (they return to their initial
-configuration but in a different position, and hence move through the
-grid).
+pattern, and this one is called an **oscillator**.  
+`The wiki at ConwayLife.com <http://www.conwaylife.com/wiki/Main_Page>` 
+describes many such terms.  For example, oscillators go through a
+cycle of states and return to their initial state; **still life**
+patterns are stable and don't change over time at all; **spaceships**
+return to their initial configuration but in a different position, and
+therefore the pattern moves through the grid.
 
 
 Approach
