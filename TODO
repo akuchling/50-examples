@@ -30,15 +30,18 @@ To be written
 *** Evening out the volume level.
 *** Apply an FFT or filtering.
 *** Music composition
+*** References: Software Carpentry course: http://software-carpentry.org/4_0/media/audio/
 * Markov chaining
 * RSA encryption
-* Random numbers: calculating pi by random numbers
+* Calculate asset allocation of a portfolio
+* Random numbers: calculating pi by random numbers 
+     http://en.wikipedia.org/wiki/Pseudorandomness#Monte_Carlo_method_simulations
 * Queuing: simulate a grocery store and a bank queue.
 * Simplex programming
 * Graphics
 *** Rendering fractals
 *** (done) Gravitational simulation
-*** Game of Life
+*** (done) Game of Life
 *** Spline curves
 *** Photo manipulation
 ***** Stretching/shrinking an image
