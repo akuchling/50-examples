@@ -4,7 +4,7 @@ import math
 from turtle import *
 
 # The gravitational constant G
-G = 6.674281e-11
+G = 6.674083e-11
 
 # Assumed scale: 100 pixels = 1AU.
 AU = (149.6e6 * 1000)     # 149.6 million km, in meters.
